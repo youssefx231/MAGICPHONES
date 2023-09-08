@@ -1,0 +1,97 @@
+<html>
+<head>
+ التواصل واتساب 01277882973</title>
+ <h1 style="text-align:center;font-size:25px;color:white">العنوان الجيزه طالبيه شارع عثمان محرم محل الماجيك بجوار كشري بحر</h1>
+<link rel="shortcut icon" href="favicon.ico"></link>
+<link rel="stylesheet" href="btn.css">
+<style>
+body{background-image: url("bg.jpg");background-repeat: no-repeat;background-size:70%;background-position: center;background-color: black;
+color:white;font-size:20px;text-align:center;margin:0;overflow:hidden;}
+.info{overflow: hidden;position: fixed;position: absolute;top: 45%;left: 50%;font-size: 25px;font-family: sans-serif;color: white;transform: translate(-50%, -50%);}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    background-color: #;
+  }
+
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -75px 0 0 -75px;
+
+    border: 10px solid #1f1e1e;
+    border-radius: 50%;
+    border-top: 10px solid #044595;
+    border-left: 10px solid #044595;
+    width: 120px;
+    height: 120px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .info {
+    overflow: hidden;
+    position: fixed;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    font-size: 45px;
+    font-family: sans-serif;
+    color: #b8b8b8;
+
+    transform: translate(-50%, -50%);
+  }
+</style>
+<script>
+  function allset() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("allset").style.display = "block";
+  }
+
+  function awaitpl() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("awaiting").style.display = "block";
+  }
+</script>
+<script src="int64.js"></script>
+<script src="rop.js"></script>
+<script src="kexploit.js"></script>
+<script src="webkit.js"></script>
+</head>
+<body>
+<div id="loader" class="loader"></div>
+<div id="awaiting" class="info" style="display:none;">جاري التحميل...</div>
+<div id="allset" class="info" style="display:none;">تم التفعيل  جولد هين بواسطه الماجيك فون!</div>
+<script>
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', "payload.bin", true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // Skip padding for 9.00 Loader
+      var tmp = new Uint8Array(xhr.response.byteLength);
+      tmp.set(new Uint8Array(xhr.response), 0);
+
+      payloadShellcode = new Uint32Array(tmp);
+      setTimeout(poc, 1500);
+    }
+  };
+  xhr.onerror = function () {
+    alert('Issue Retreiving Payload!');
+  };
+  xhr.send();
+</script>
+</body>
+</html>
